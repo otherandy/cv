@@ -1,0 +1,29 @@
+name: Build LaTeX documents
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv_*.tex
+      - name: Rename PDF files
+        run: |
+          mv cv_en.pdf CV_Andres_Herrera_EN.pdf
+          mv cv_es.pdf CV_Andres_Herrera_ES.pdf
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            CV_Andres_Herrera_EN.pdf
+            CV_Andres_Herrera_ES.pdf
