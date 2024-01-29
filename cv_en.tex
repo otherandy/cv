@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CV of José Andrés Herrera Hirales
+% EN Version
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,11pt]{memoir} % Font and paper size
+
+\input{structure.tex} % Include the file specifying document layout and packages
+\input{data.tex} % Include the file specifying user data
+
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION 
+%----------------------------------------------------------------------------------------
+
+\userinformation{ % Set the content that goes into the sidebar of each page
+% Comment out this figure block if you don't want a photo
+% \begin{figure}
+% \hfill % Right align the photo
+% \includegraphics[width=0.6\columnwidth]{photo.png} % Your photo
+% \end{figure}
+
+\begin{flushright}
+\small % Smaller font size
+\textbf{Contact} \\
+% \givenname \\
+% \familyname \\ % Your name
+\email \\ % Your email address
+\website \\ % Your URL
+\Sep % Some whitespace
+% \textbf{Address} \\ % Address
+Baja California, \\
+Mexico \\
+\vfill % Whitespace under this block to push it up under the photo
+\end{flushright}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\userinformation % Print your information in the left column
+
+\framebreak % End of the first column
+
+%----------------------------------------------------------------------------------------
+%	MAIN CONTENT
+%----------------------------------------------------------------------------------------
+
+\heading{\fullname} % Large heading - your name
+
+\subheading{Bachelor of Computer Science} % Subheading - your occupation/specialization
+
+\aboutme{Profile}{Passionate about code. Attentive and dedicated to work.}
+
+\Sep
+
+\CVSection{Education}
+
+\CVItem{Centro de Bachillerato Tecnologico Industrial y de Servicios\\ No. 41}{Programming Technician}
+{August 2015 -- July 2018}{}
+
+\CVItem{Universidad Autónoma de Baja California}{Bachelor's in Computer Science}
+{August 2018 -- August 2023}{}
+
+\Sep
+
+\CVSection{Experience}
+
+\CVItem{Technical Advisor}{tShirtGuys S.A. de C.V.}
+{March 2017 -- July 2017}
+{Support in the installation of business software.}
+
+\CVItem{Laboratory Assistantship}{UABC}
+{January 2021 -- July 2021}
+{Research on animal movements to simulate them in software.}
+
+\CVItem{I.T. Technical Support}{CBTis No. 41}
+{August 2022 -- February 2023}
+{Improvement, control and administration of networks and computer systems.}
+
+\CVItem{Practitioner}{Technology Sales \& Advisory, LLC}
+{August 2023 -- December 2023}
+{Development of CRM apps in the cloud using Salesforce.}
+
+\Sep
+
+\CVSection{Certifications}
+
+\CVItem{AWS Cloud Practitioner}{}
+{(Issued) March 2023 -- (Expires) March 2026}{}
+
+\Sep
+
+\CVSection{Skills}
+
+\begin{tabular}{p{0.15\textwidth} p{0.15\textwidth} p{0.15\textwidth}}
+    \bluebullet JS/TS & \bluebullet HTML/CSS & \bluebullet Node       \\
+    \bluebullet React & \bluebullet Next.js  & \bluebullet MongoDB    \\
+    \bluebullet C/C++ & \bluebullet Python   & \bluebullet Git/GitHub \\
+    \bluebullet AWS   & \bluebullet Linux    & \bluebullet Salesforce
+\end{tabular}
+
+\Sep
+
+\CVSection{Languages}
+
+\bluebullet Native \textbf{Spanish} \\
+\bluebullet Fluent \textbf{English} \textit{with a score of 637 in the TOEFL ITP} \\
+\bluebullet Learning \textbf{Japanese}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
