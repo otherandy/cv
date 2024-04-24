@@ -1,3 +1,6 @@
+## Local only
+cv_basic*
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
