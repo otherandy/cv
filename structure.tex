@@ -24,9 +24,13 @@
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage[top=2cm,left=1cm,right=1cm,bottom=2cm]{geometry} % Modify margins
 \usepackage{graphicx} % Required for figures
+% Work around memoir/flowfram collision on \cleartoevenpage with newer LaTeX.
+\makeatletter
+\let\cleartoevenpage\@undefined
+\makeatother
 \usepackage{flowfram} % Required for the multi-column layout
 \usepackage{url} % URLs
-\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colours
+\usepackage[dvipsnames]{xcolor} % Required for custom colours
 \usepackage{tikz} % Required for the horizontal rule
 \usepackage{enumitem} % Required for modifying lists
 \usepackage{ifthen} % Required for conditional statements
@@ -45,9 +49,9 @@
 
 % Content of the static frame with the vertical line
 \begin{staticcontents}{1}
-    \hfill
-    \tikz{\draw[loosely dotted,color=RoyalBlue,line width=1.5pt,yshift=0](0,0) -- (0,\textheight);}
-    \hfill\mbox{}
+  \hfill
+  \tikz{\draw[loosely dotted,color=RoyalBlue,line width=1.5pt,yshift=0](0,0) -- (0,\textheight);}
+  \hfill\mbox{}
 \end{staticcontents}
 
 % Define the right frame (main body)
@@ -72,23 +76,23 @@
 \newcommand{\SmallSep}{\vspace{0.6em}} % New command for the spacing within headings
 
 \newcommand{\aboutme}[2]{ % New command for the about me section
-    \textbf{\color{RoyalBlue} \MakeUppercase{#1}}~~#2\Sep
+  \textbf{\color{RoyalBlue} \MakeUppercase{#1}}~~#2\Sep
 }
 
 \newcommand{\CVSection}[1]{ % New command for the headings within sections
-    {\textbf{\color{RoyalBlue} \MakeUppercase{#1}}}\par
-    \SmallSep
+  {\textbf{\color{RoyalBlue} \MakeUppercase{#1}}}\par
+  \SmallSep
 }
 
 \newcommand*{\CVItem}[4]{ % New command for the item descriptions
-    \ifthenelse{\equal{#2}{}}
-    {\textbf{#1}\par}
-    {{\textbf{#1} --- \textit{#2}}\par}
-    {\footnotesize{\color{gray} \MakeUppercase{#3}}}\par
-    \ifthenelse{\equal{#4}{}}
-    {}
-    {{\scriptsize{\textcolor{gray}{#4}}}\par}
-    \SmallSep
+  \ifthenelse{\equal{#2}{}}
+  {\textbf{#1}\par}
+  {{\textbf{#1} --- \textit{#2}}\par}
+  {\footnotesize{\color{gray} \MakeUppercase{#3}}}\par
+  \ifthenelse{\equal{#4}{}}
+  {}
+  {{\scriptsize{\textcolor{gray}{#4}}}\par}
+  \SmallSep
 }
 
 \newcommand{\bluebullet}{\textcolor{RoyalBlue}{$\circ$}~~} % New command for the blue bullets
